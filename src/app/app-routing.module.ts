@@ -13,7 +13,7 @@ const routes: Routes = [
   {path : 'post-writtng' , component : PostWrittingComponent ,  },
   {path : 'post-writtng/:id' , component : PostWrittingComponent ,  },
   { path: '',
-    redirectTo: '/articles',
+    redirectTo: '/about',
     pathMatch: 'full'
   },
 ];

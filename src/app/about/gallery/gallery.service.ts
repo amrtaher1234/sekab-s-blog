@@ -9,6 +9,6 @@ export class GalleryService {
   constructor(private http: HttpClient) {
   }
   public fatchChampions() {
-    return this.http.get('http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json');
+    return this.http.get('https://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json');
   }
 }
