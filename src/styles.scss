@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+main{
+    padding-top: 9%;
+    width: 62%; 
+    margin: auto; 
+}
+
+p{
+    font-size: 15px;
+    font: normal normal normal 23px  -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+    line-height: 1.35em;
+    color: #404040;
+}
+
+p::selection , a::selection , div::selection {
+    background: #fff2a8;
+}
+
+.-spacer {
+    flex-grow: 1; 
+  }
+
+  a{
+      color:unset; 
+  }
+
+  @import './harmonic-theme.scss'; 
+  
+  .icon-img-32{
+      width: 32px; 
+      height: 32px; 
+  }

@@ -1,0 +1,31 @@
+
+
+<div class="container">
+
+    <button (click)='changeImage("previous")' class="left-arrow" mat-button><mat-icon [inline]="true"  >keyboard_arrow_left</mat-icon></button>
+
+  <div *ngIf="championsObject | async as championsData">
+  <mat-card @flyInOut class="example-card">
+      <mat-card-header>
+        <div [style.background-image]="getIcon(championsData)" mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{getChampion(championsData).name}}</mat-card-title>
+        <mat-card-subtitle>{{getChampion(championsData).title}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{getChampion(championsData).id}}_0.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p class="mat-card-content">
+            {{getChampion(championsData).blurb}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button  mat-button> <a target="_blank" href="https://lol.garena.com/champion?id={{getChampion(championsData).id}}">Read more!</a> </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+
+  <button (click)='changeImage("next")' class="right-arrow" mat-button><mat-icon [inline]="true"  >keyboard_arrow_right</mat-icon></button>
+
+</div>
+
+

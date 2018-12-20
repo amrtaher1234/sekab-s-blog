@@ -1,0 +1,32 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic,600italic,700italic,800italic);
+.example-header-image {
+    background-size: cover;
+  }
+
+
+.mat-icon.mat-icon-inline {
+    font-size: 29px;
+}
+.container{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+}
+.right-arrow , .left-arrow{
+    flex: 1; 
+}
+.example-card{
+    flex:8;
+}
+.mat-card{
+    background: none;
+}
+.mat-card-content p{
+    font-size: 17px !important; 
+    font-family: Open Sans; 
+}
+
+.mat-card a{
+text-decoration: none; 
+color: inherit;
+}
