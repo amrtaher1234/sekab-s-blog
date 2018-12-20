@@ -13,8 +13,10 @@ import { ArticlesComponent } from './articles/articles.component';
 import { ArticleComponent } from './articles/article/article.component';
 
 import { AngularFireModule } from '@angular/fire';
-import {AngularFirestoreModule} from '@angular/fire/firestore'; 
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
+import { PostWrittingComponent } from './post-writting/post-writting.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,12 +26,14 @@ import { environment } from 'src/environments/environment';
     AboutComponent,
     GalleryComponent,
     ArticlesComponent,
-    ArticleComponent
+    ArticleComponent,
+    PostWrittingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     //
     MaterialModule,
 

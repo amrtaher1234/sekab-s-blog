@@ -23,7 +23,7 @@ export class ArticlesComponent implements OnInit {
   }
   goTo(article){
     console.log(article);
-    this.router.navigate(["/article" , "sad"]); 
+    this.router.navigate(["/article" , article.header]); 
 
   }
 

@@ -1,9 +1,15 @@
-import { MatAutocompleteModule, MatButtonModule, MatToolbarModule , MatIconModule, MatTooltipModule,MatListModule,
+import { MatAutocompleteModule, MatButtonModule,  MatToolbarModule , MatIconModule, MatTooltipModule, MatListModule, MatFormFieldModule,
     MatCardModule} from '@angular/material/';
+import {MatInputModule, MatSelectModule , MatRadioModule , MatDividerModule} from '@angular/material';
 import { NgModule } from '@angular/core';
 
 
-const mods = [MatAutocompleteModule, MatButtonModule, MatToolbarModule , MatIconModule , MatTooltipModule , MatCardModule , MatListModule];
+// tslint:disable-next-line:max-line-length
+const mods = [MatFormFieldModule, MatAutocompleteModule,
+    MatInputModule, MatSelectModule, MatRadioModule,
+     MatButtonModule, MatToolbarModule , MatIconModule ,
+     MatDividerModule,
+     MatTooltipModule , MatCardModule , MatListModule];
 
 @NgModule({
     declarations: [],

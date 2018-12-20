@@ -1,21 +1,38 @@
-<section class="article">
-  <img class="header-img" src="https://firebasestorage.googleapis.com/v0/b/my-blogging-web-app.appspot.com/o/posts-icons%2Ffirebase.png?alt=media&token=af8a8c24-3f4b-45dd-9674-29d4962b00d5" 
+<section *ngIf="post" class="article">
+  <img  class="header-img" src="{{post.icon}}" 
   alt="">
     <div class="mat-display-2">
-      Getting started with firebase / ionic 3 <br>
-    <span style="font-size:20px;">August 19, 2010</span>
+      {{post.header}} <br>
+    <span style="font-size:20px;">{{post.time | date}}</span>
     </div>
 
-    <div class="content">
-    <p>p5.js, man this library is 
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt qui eaque, dolore, earum aut incidunt vel dolores explicabo ea eum unde consectetur reprehenderit repellendus nobis doloremque quo. Eaque, at repudiandae.
-    </p>
+    <div *ngFor="let content of post.content" class="content">
+      
+      <!-- if it is a paragprag  -->
+      <p *ngIf="content.type == 'p'" [innerHTML]="content.text"></p>
+      
+      <!-- if it is an image -->
+      <img *ngIf="content.type == 'img' " src="{{content.src}}" alt="">
+
+      <!-- if it is a list -->
+      <div *ngIf="content.type == 'li'">
+          <mat-list >
+              <mat-list-item *ngFor="let item of content.list" [innerHTML]="item"></mat-list-item>>
+            </mat-list>
+      </div>
+
+      <div *ngIf="content.type == 'code'">
+          <pre>
+              <code class="language-js Dracula" >
+             {{content.code}}
+            </code>
+          </pre>
+      </div>
     </div>
+
+
+
     </section>
-    
-    <pre><code class="language-css Dracula">
-      {{'body : {
-        background : blue; 
-      }'}}
-    </code></pre>
+
+
     

@@ -1,0 +1,44 @@
+
+  <div class="example-container">
+    <mat-form-field class="example-full-width">
+            <input [(ngModel)]="post.header" matInput placeholder="Post Header" >
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+                <input [(ngModel)]="post.icon" matInput placeholder="Post Icon Src">
+              </mat-form-field>
+            </div>
+            <mat-divider></mat-divider>
+
+    <div  class="example-container" *ngFor="let content of contentArray; let i = index">
+    <button (click)="removeContent(i)" style="width:40px;" mat-mini-fab color="warn"><mat-icon class="mat-18">remove</mat-icon></button>
+    <mat-form-field>
+      <mat-select [(ngModel)]="contentArray[i].type"  placeholder="Select me">
+        <mat-option value="p">Paragraph</mat-option>
+        <mat-option value="img">Image</mat-option>
+        <mat-option value="code">Code Section</mat-option>
+        <mat-option value="li">List Section</mat-option>
+        <mat-option value="video">Video</mat-option>
+      </mat-select>
+      <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+    </mat-form-field>
+
+    <br>
+    <mat-form-field *ngIf="contentArray[i]?.type =='p'">
+        <textarea [(ngModel)]="contentArray[i].text" matInput placeholder="Text"></textarea>
+      </mat-form-field>
+      <mat-form-field  *ngIf="contentArray[i]?.type =='code'">
+        <textarea [(ngModel)]="contentArray[i].code" matInput placeholder="Code"></textarea>
+      </mat-form-field>
+      <mat-form-field  *ngIf="contentArray[i]?.type =='img'">
+        <input [(ngModel)]="contentArray[i].src" matInput placeholder="Image">
+      </mat-form-field>
+      <mat-divider></mat-divider>
+      <mat-divider></mat-divider>
+
+    </div>
+
+    <button (click)="addContent()" mat-fab color="primary"><mat-icon class="mat-18">add</mat-icon></button>
+    <br><br>
+    <button (click)="createPost()" mat-raised-button color="accent">Add Post</button>
+
