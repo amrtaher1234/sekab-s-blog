@@ -13,3 +13,10 @@ div.gray-section{
         }
     }
 }
+@media only screen and (max-width: 600px) {
+mat-list{
+    span{
+        display: none; 
+    }
+}
+}

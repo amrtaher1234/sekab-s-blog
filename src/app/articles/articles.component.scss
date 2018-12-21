@@ -30,3 +30,15 @@ mat-toolbar:hover{
     background: #f2f2f2; 
     cursor: pointer;
 }
+@media only screen and (max-width: 600px) {
+    .post-name{
+        font-size: 15px !important;
+    }
+    .post-icon{
+        margin-right: 5px !important;
+    }
+    .post-date{
+        font-size: 14px !important;
+        font-style: italic !important;
+    }
+}

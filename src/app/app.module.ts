@@ -17,6 +17,8 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { PostWrittingComponent } from './post-writting/post-writting.component';
 import { FormsModule } from '@angular/forms';
+import { CardComponent } from './components/card/card.component';
+import { WorkComponent } from './work/work.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { FormsModule } from '@angular/forms';
     GalleryComponent,
     ArticlesComponent,
     ArticleComponent,
-    PostWrittingComponent
+    PostWrittingComponent,
+    CardComponent,
+    WorkComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,7 @@ export interface Content {
   type?: string;
   src?: string;
   code?: string;
+  lang?: string;
   text?: string;
   li?: any[];
 }

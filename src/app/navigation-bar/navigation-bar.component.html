@@ -1,28 +1,54 @@
 <mat-toolbar color="foreground">
 
   <mat-toolbar-row>
+      
     <span class="-spacer"></span>
 
     <a routerLink='/about'><button class="name"  mat-button >
       <img src="../../assets/Icons8/icons8-octocat-800.png" width="40" height="40" alt="">
       Amr Taher</button></a>
 
+     
 
     <span class="-spacer"></span>
-    <a routerLink='/about'><button  mat-button>About me</button></a>
-    <a routerLink = '/articles'><button  mat-button>Articles</button></a>
+    <button class="menu-btn" mat-button [matMenuTriggerFor]="menu"><mat-icon class="mat-18">menu</mat-icon></button>
+    <mat-menu #menu="matMenu">
+        <a mat-menu-item routerLink='/about'><button  mat-button>About me</button></a>
+        <a mat-menu-item routerLink = '/articles'><button  mat-button>Articles</button></a>
+        <a mat-menu-item routerLink = '/work'><button  mat-button>My work</button></a>
+
+        <!-- <a routerLink=''><button  mat-button>Support</button></a> -->
+        <span class="-spacer"></span>
+        <button  mat-button>
+            <a href="https://www.linkedin.com/in/amr-taher-442228140/" target="_blank">
+              <img height=44 width =44 src="../../assets/Icons8/icons8-linkedin-600.png">
+            </a>
+          </button>
+          <button
+          matTooltip="Github Account:)"
+           mat-button>
+            <a  href="https://github.com/amrtaher1234" target="_blank">
+              <img height=44 width =44 src="../../assets/Icons8/icons8-git-700.png">
+            </a>
+          </button>
+    </mat-menu>
+    
+    <a id="toolbar-item" routerLink='/about'><button  mat-button>About me</button></a>
+    <a id="toolbar-item" routerLink = '/articles'><button  mat-button>Articles</button></a>
+    <a id="toolbar-item" routerLink = '/work'><button  mat-button>My work</button></a>
     <!-- <a routerLink=''><button  mat-button>Support</button></a> -->
-    <span class="-spacer"></span>
+    <span id="toolbar-item" class="-spacer"></span>
 
-      <button mat-button>
+      <button id="toolbar-item" mat-button>
         <a href="https://www.linkedin.com/in/amr-taher-442228140/" target="_blank">
           <img height=44 width =44 src="../../assets/Icons8/icons8-linkedin-600.png">
         </a>
       </button>
       <button
+      id="toolbar-item"
       matTooltip="Github Account:)"
        mat-button>
-        <a href="">
+        <a href="https://github.com/amrtaher1234" target="_blank">
           <img height=44 width =44 src="../../assets/Icons8/icons8-git-700.png">
         </a>
       </button>

@@ -23,7 +23,7 @@
 
       <div *ngIf="content.type == 'code'">
           <pre>
-              <code class="language-js Dracula" >
+              <code class="{{content.lang}}" >
              {{content.code}}
             </code>
           </pre>
@@ -31,8 +31,15 @@
     </div>
 
 
+    <div class="voting-area">
+      
+    </div>
+    <div class="comment-section">
 
+    </div>
     </section>
+
+    <mat-spinner *ngIf="!post"></mat-spinner>
 
 
     

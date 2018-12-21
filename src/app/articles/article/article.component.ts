@@ -8,7 +8,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
-  styleUrls: ['./article.component.scss', '../../../harmonic-theme.scss']
+  styleUrls: ['./article.component.scss']
 })
 export class ArticleComponent implements OnInit {
 

@@ -15,6 +15,9 @@ import 'prismjs/components/prism-markup';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-sass';
 import 'prismjs/components/prism-scss';
+import 'prismjs/components/prism-bash';
+
+import 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace';
 
 
 declare var Prism: any;
@@ -23,7 +26,9 @@ declare var Prism: any;
 })
 export class HighlightService {
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    console.log();
+  }
 
   highlightAll() {
     if (isPlatformBrowser(this.platformId)) {

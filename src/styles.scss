@@ -10,13 +10,12 @@ main{
 }
 
 p{
-    font-size: 15px;
     font: normal normal normal 19.6px  -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
     line-height: 1.35em;
     color: #404040;
 }
 
-p::selection , a::selection , div::selection {
+*::selection {
     background: #fff2a8;
 }
 
@@ -27,10 +26,34 @@ p::selection , a::selection , div::selection {
   a{
       color:unset; 
   }
+  
+  @import "../node_modules/prismjs/themes/prism.css";
+@import "../node_modules/prismjs/plugins/toolbar/prism-toolbar.css";
 
-  @import './harmonic-theme.scss'; 
+//   @import './harmonic-theme.scss'; 
   
   .icon-img-32{
       width: 32px; 
       height: 32px; 
+  }
+
+  // 
+  @media only screen and (max-width: 600px) {
+    main{
+        padding-top: 21.9%;
+        width: 85%;
+        div.gray-section p ,  p{
+            font-size: 16.6px; 
+        }
+        .mat-display-2, .mat-typography .mat-display-2{
+            font-size: 39px;
+            margin: 0 0 43px; 
+        }
+    }
+  }
+  mat-spinner{
+      position: absolute !important;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%); 
   }

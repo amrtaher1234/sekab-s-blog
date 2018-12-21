@@ -10,20 +10,20 @@ import { Router } from '@angular/router';
 })
 export class ArticlesComponent implements OnInit {
 
-  articles : Observable<Post[]>
+  articles: Observable<Post[]>;
   constructor(
-    private router : Router,
-    private articlesService : ArticleService) { 
+    private router: Router,
+    private articlesService: ArticleService) {
 
-    this.articles = this.articlesService.fetchPosts(); 
-    this.articles.subscribe(data => console.log(data) , err => console.log(err)); 
+    this.articles = this.articlesService.fetchPosts();
+    this.articles.subscribe(data => console.log(data) , err => console.log(err));
   }
 
   ngOnInit() {
   }
-  goTo(article){
+  goTo(article) {
     console.log(article);
-    this.router.navigate(["/article" , article.header]); 
+    this.router.navigate(['/article' , article.header]);
 
   }
 

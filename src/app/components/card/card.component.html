@@ -1,0 +1,33 @@
+<!-- 
+<div class="container">
+<mat-card class="example-card">
+    <img class="card-img" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        A web Scrapper that scaps Wuzzuf.com for jobs with salaries
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  
+</div> -->
+
+ <div class="row">
+  <div *ngFor="let card of data" class="example-1 card">
+    <div [style.background-image]="'url('+card.image+')'"  class="wrapper">
+      <div class="date">
+        <span class="day">{{card.genre}}</span>
+        <!-- <span class="year">18</span> -->
+      </div>
+      <div class="data">
+        <div class="content">
+          <!-- <span class="author">Jane Doe</span> -->
+          <h1 class="title"><a target="_blank" href="{{card.link}}">{{card.header}}</a></h1>
+          <p class="text">{{card.text}}</p>
+          <label for="show-menu" class="menu-button"><span></span></label>
+        </div>
+        <input type="checkbox" id="show-menu" />
+      </div>
+    </div>
+  </div>
+</div>
