@@ -44,4 +44,7 @@ export class ArticleService {
    public updatePost(post: Post , id: string) {
      return this.db.firestore.collection('Posts').doc(id).set(post);
    }
+   public upVote(id: string , value: number) {
+     return this.db.firestore.collection('Posts').doc(id).update({votes : value});
+   }
 }
