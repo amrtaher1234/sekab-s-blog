@@ -43,7 +43,7 @@ import { WorkComponent } from './work/work.component';
 
     HttpClientModule,
     AngularFireModule.initializeApp(environment.config),
-    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence(),
   ],
   providers: [],
   bootstrap: [AppComponent]
