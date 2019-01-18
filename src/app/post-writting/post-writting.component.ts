@@ -67,5 +67,18 @@ export class PostWrittingComponent implements OnInit {
     });
   }
 }
+addCodeTags(i , lang) {
+  if (!this.contentArray[i].text) {
+    this.contentArray[i].text = ' ';
+  }
+  this.contentArray[i].text += `<code class=${lang}> </code>`;
+  // document.getElementById(i).focus();
+  try {
+    document.getElementById(i).focus();
+  console.log(document.getElementById(i));
+  } catch (er) {
+    console.log(er);
+  }
+}
 
 }

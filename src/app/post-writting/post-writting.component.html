@@ -24,8 +24,15 @@
     </mat-form-field>
 
     <br>
+    <mat-toolbar *ngIf="contentArray[i]?.type =='p'"  color="foreground">
+        <mat-toolbar-row>
+            <button (click)="addCodeTags(i , 'lang-bash')"  mat-button>
+                  <img height=44 width =44 src="https://cdn4.iconfinder.com/data/icons/proglyphs-computers-and-development/512/HTML-512.png">
+              </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
     <mat-form-field *ngIf="contentArray[i]?.type =='p'">
-        <textarea [(ngModel)]="contentArray[i].text" matInput placeholder="Text"></textarea>
+        <textarea [id]="i" [(ngModel)]="contentArray[i].text" matInput placeholder="Text"></textarea>
       </mat-form-field>
 
       <mat-form-field  *ngIf="contentArray[i]?.type =='code'">
