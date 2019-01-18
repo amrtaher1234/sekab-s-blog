@@ -19,6 +19,7 @@ import { PostWrittingComponent } from './post-writting/post-writting.component';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
 import { WorkComponent } from './work/work.component';
+import { VoteButtonComponent } from './components/vote-button/vote-button.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { WorkComponent } from './work/work.component';
     ArticleComponent,
     PostWrittingComponent,
     CardComponent,
-    WorkComponent
+    WorkComponent,
+    VoteButtonComponent
   ],
   imports: [
     BrowserModule,

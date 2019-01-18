@@ -1,0 +1,14 @@
+.wrap{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: fit-content;
+}
+span{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.container {
+    position: fixed;
+    left: 20px;
+}
