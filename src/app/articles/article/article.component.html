@@ -6,13 +6,14 @@
     <span style="font-size:20px;">{{post.time | date}}</span>
     </div>
 
+
     <div *ngFor="let content of post.content" class="content">
       
       <!-- if it is a paragprag  -->
       <p *ngIf="content.type == 'p'" [innerHTML]="content.text"></p>
       
       <!-- if it is an image -->
-      <img *ngIf="content.type == 'img' " src="{{content.src}}" alt="">
+      <img style="width: auto; max-width: 100%;" class="article-img" *ngIf="content.type == 'img' " src="{{content.src}}" alt="">
 
       <!-- if it is a list -->
       <div *ngIf="content.type == 'li'">
