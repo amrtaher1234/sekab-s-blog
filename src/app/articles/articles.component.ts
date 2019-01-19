@@ -10,13 +10,16 @@ import { Router } from '@angular/router';
 })
 export class ArticlesComponent implements OnInit {
 
-  articles: Observable<Post[]>;
+  articles: Post[];
   constructor(
     private router: Router,
     private articlesService: ArticleService) {
 
-    this.articles = this.articlesService.fetchPosts();
-    this.articles.subscribe(data => console.log(data) , err => console.log(err));
+    this.articlesService.fetchPosts().then(snap => {
+      this.articles = snap.docs.map(val => val.data() as Post);
+      console.log(this.articles);
+    });
+    // this.articles.subscribe(data => console.log(data) , err => console.log(err));
   }
 
   ngOnInit() {

@@ -4,7 +4,7 @@
     </div>
     
     <a >
-    <mat-toolbar class="post" *ngFor="let article of articles | async " >
+    <mat-toolbar class="post" *ngFor="let article of articles " >
 
         <mat-toolbar-row (click)="goTo(article)">
          <span class="post-icon"> <img src="{{article.icon}}" alt=""></span>
