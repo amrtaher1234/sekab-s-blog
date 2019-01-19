@@ -4,6 +4,7 @@ import { switchMap } from 'rxjs/operators';
 import { ArticleService, Post } from './article.service';
 import { HighlightService } from 'src/app/highlight.service';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { GlobalService } from 'src/app/global.service';
 
 @Component({
   selector: 'app-article',
@@ -15,6 +16,7 @@ export class ArticleComponent implements OnInit {
   post: Post;
   highlighted: boolean;
   constructor(
+    private globals: GlobalService,
     private angularfire: AngularFirestore,
     private highlightService: HighlightService,
     private route: ActivatedRoute, private articleService: ArticleService) {
@@ -31,6 +33,7 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.globals.isLoading = true;
     const postHeader = this.route.snapshot.paramMap.get('name');
     console.log(postHeader);
     this.articleService.getPost(postHeader).then(snapshot => {
@@ -41,7 +44,7 @@ export class ArticleComponent implements OnInit {
           this.highlightService.highlightAll();
         }, 0);
       });
-    });
+    }).finally(() => this.globals.isLoading = false);
   }
 
   handleCode(code: string): string {
