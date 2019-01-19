@@ -5,10 +5,27 @@
     width: fit-content;
 }
 span{
-    font-size: 15px;
+    font-size: 20px;
     margin-bottom: 10px;
 }
 .container {
     position: fixed;
-    left: 20px;
+    z-index: 9;
+    right: 11%;
+    top: 30%;
+    opacity: 0.6;
+    transition: all 0.4s linear;
 }
+.opacity-pump{
+    opacity: 1;
+}
+button {
+    background: linear-gradient(to right, #d3959b, #bfe6ba) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+@media only screen and (max-width: 600px) {
+    .container{
+        right: 5%;
+        top: 11%;
+    }
+    }

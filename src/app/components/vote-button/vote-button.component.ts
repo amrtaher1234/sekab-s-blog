@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ArticleService } from 'src/app/articles/article/article.service';
 
 @Component({
   selector: 'app-vote-button',
@@ -7,18 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VoteButtonComponent implements OnInit {
 
-  votes = 0;
-  constructor() { }
+  @Input() votes: number;
+  @Input() post_id: string;
+  constructor(private articleService: ArticleService) { }
 
   ngOnInit() {
   }
   clickMe() {
     this.votes++;
-
+    document.getElementById('container').classList.add('opacity-pump');
     this.animateCss('.vote-btn', 'jello', () => {
       console.log('finished');
+      document.getElementById('container').classList.remove('opacity-pump');
     });
-    this.animateCss('.number', 'bounce', () => { });
+    this.animateCss('.number', 'bounceIn', () => { });
+    this.articleService.upVote(this.post_id , this.votes);
   }
   animateCss(element, animationName, callback) {
     const node = document.querySelector(element);
@@ -36,4 +40,5 @@ export class VoteButtonComponent implements OnInit {
 
     node.addEventListener('animationend', handleAnimationEnd);
   }
+
 }
