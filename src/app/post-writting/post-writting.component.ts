@@ -22,7 +22,6 @@ export class PostWrittingComponent implements OnInit {
     this.contentArray.push(tempContent);
    }
   ngOnInit() {
-    this.post.post = '';
     this.postDoc = this.route.snapshot.paramMap.get('id');
     if (this.postDoc) {
       this.toEdit = true;
@@ -34,6 +33,8 @@ export class PostWrittingComponent implements OnInit {
       }).catch(err => {
         console.error(err);
       });
+    } else {
+    this.post.post = '';
     }
   }
   addContent() {
@@ -46,7 +47,7 @@ export class PostWrittingComponent implements OnInit {
     if (this.toEdit === false) {
     this.post.content = this.contentArray;
     this.post.time = new Date().toString();
-    if (this.post.header && this.post.icon && this.post.content) {
+    if (this.post.header && this.post.icon && this.post.content && this.post.post) {
       this.articleService.addPost(this.post).then(res => {
           console.log('successful post addition');
           this.post = {} as Post;
@@ -84,9 +85,13 @@ addCodeTags(i , lang) {
 
 addTag(tag , options) {
   if (tag === 'code') {
-    this.post.post += '\n' + `<code class="${options}"> </code>`;
+    this.post.post += '\n' + `<pre><code class="${options}"> </code></pre>`;
+  } else if (tag === 'img') {
+    this.post.post += '\n' + `<img style="width:auto; max-width:100%;" src="${options}">`;
+  } else if (tag === 'paragraph') {
+    this.post.post += '\n' + `<p> </p>`;
   } else {
-    this.post.post += '\n ' + `<img style="width:auto; max-width:100%;" src="${options}">`;
+    this.post.post += `\n` + `<div class="mat-display-1">  </div>`;
   }
 }
 
