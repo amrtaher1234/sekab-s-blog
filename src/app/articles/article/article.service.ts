@@ -10,6 +10,7 @@ export interface Post {
   icon: string ;
   time: string ;
   content: any[];
+  id?: string;
 }
 export interface Content {
   type?: string;
@@ -30,7 +31,7 @@ export class ArticleService {
 
    }
    public fetchPosts() {
-    return this.db.collection('Posts').valueChanges() as Observable<Post[]>;
+    return this.db.collection('Posts').get().toPromise();
    }
    public getPost(header) {
      return  this.db.firestore.collection('Posts').where('header' , '==' , header).get();

@@ -1,3 +1,4 @@
+<app-vote-button *ngIf="post" [votes]='post.votes' [post_id]='post.id'></app-vote-button>
 <section *ngIf="post" class="article">
   <img  class="header-img" src="{{post.icon}}" 
   alt="">

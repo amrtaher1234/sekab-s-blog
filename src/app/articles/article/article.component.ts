@@ -36,6 +36,7 @@ export class ArticleComponent implements OnInit {
     this.articleService.getPost(postHeader).then(snapshot => {
       snapshot.forEach(snap => {
         this.post = snap.data() as Post;
+        this.post.id = snap.id;
         setTimeout(() => {
           this.highlightService.highlightAll();
         }, 0);
