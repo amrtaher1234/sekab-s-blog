@@ -11,6 +11,7 @@ export interface Post {
   time: string ;
   content: any[];
   id?: string;
+  post?: string;
 }
 export interface Content {
   type?: string;

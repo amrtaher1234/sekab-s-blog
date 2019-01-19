@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
 import { WorkComponent } from './work/work.component';
 import { VoteButtonComponent } from './components/vote-button/vote-button.component';
+import { CommentSectionComponent } from './component/comment-section/comment-section.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { VoteButtonComponent } from './components/vote-button/vote-button.compon
     PostWrittingComponent,
     CardComponent,
     WorkComponent,
-    VoteButtonComponent
+    VoteButtonComponent,
+    CommentSectionComponent
   ],
   imports: [
     BrowserModule,
