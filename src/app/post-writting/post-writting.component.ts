@@ -22,6 +22,7 @@ export class PostWrittingComponent implements OnInit {
     this.contentArray.push(tempContent);
    }
   ngOnInit() {
+    this.post.post = '';
     this.postDoc = this.route.snapshot.paramMap.get('id');
     if (this.postDoc) {
       this.toEdit = true;
@@ -78,6 +79,14 @@ addCodeTags(i , lang) {
   console.log(document.getElementById(i));
   } catch (er) {
     console.log(er);
+  }
+}
+
+addTag(tag , options) {
+  if (tag === 'code') {
+    this.post.post += '\n' + `<code class="${options}"> </code>`;
+  } else {
+    this.post.post += '\n ' + `<img style="width:auto; max-width:100%;" src="${options}">`;
   }
 }
 

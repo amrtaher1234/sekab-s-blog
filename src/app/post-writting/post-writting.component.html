@@ -10,6 +10,32 @@
             </div>
             <mat-divider></mat-divider>
 
+             <!-- NEW MODIFICATIONS TO THE WAY WE WRITE POSTS..TODO: ON PROGRESS -->
+            <mat-toolbar>
+            <mat-toolbar-row>
+              <button (click)="addTag('code', 'lang-bash')"  mat-button>
+                    <img height=44 width =44 src="https://cdn4.iconfinder.com/data/icons/proglyphs-computers-and-development/512/HTML-512.png">
+                </button>
+                <span class="-spacer"></span>
+                <mat-form-field class="example-full-width">
+                  <input #img matInput placeholder="Image Link" >
+
+                  <button (click)="addTag('img' , img.value)"  mat-button>
+                    <img height=44 width =44 src="data:image/png;base64,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">
+                </button>
+
+                </mat-form-field>
+                <span class="-spacer"></span>
+          </mat-toolbar-row>
+        </mat-toolbar>
+
+        <mat-form-field class="example-container" >
+          <textarea  [(ngModel)]="post.post" matInput placeholder="Text"></textarea>
+        </mat-form-field>
+
+             <!-- NEW MODIFICATIONS TO THE WAY WE WRITE POSTS..TODO: ON PROGRESS -->
+
+
     <div  class="example-container" *ngFor="let content of contentArray; let i = index">
     <button (click)="removeContent(i)" style="width:40px;" mat-mini-fab color="warn"><mat-icon class="mat-18">remove</mat-icon></button>
     <mat-form-field>
