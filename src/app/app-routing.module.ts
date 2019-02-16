@@ -6,13 +6,16 @@ import { ArticlesComponent } from './articles/articles.component';
 import { ArticleComponent } from './articles/article/article.component';
 import { PostWrittingComponent } from './post-writting/post-writting.component';
 import { WorkComponent } from './work/work.component';
+import { LoginComponent } from './authentication/login/login.component';
+import { LoginGuard } from './authentication/login.guard';
 
 const routes: Routes = [
   {path : 'about' , component : AboutComponent ,  },
+  {path : 'login' , component : LoginComponent  },
   {path : 'articles' , component : ArticlesComponent ,  },
   {path : 'article/:name' , component : ArticleComponent ,  },
-  {path : 'post-writting' , component : PostWrittingComponent ,  },
-  {path : 'post-writting/:id' , component : PostWrittingComponent ,  },
+  {path : 'post-writting' , component : PostWrittingComponent , canActivate: [LoginGuard]},
+  {path : 'post-writting/:id' , component : PostWrittingComponent , canActivate: [LoginGuard]  },
   {path : 'work' , component : WorkComponent ,  },
   { path: '',
     redirectTo: '/about',
