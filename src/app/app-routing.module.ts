@@ -10,17 +10,19 @@ import { LoginComponent } from './authentication/login/login.component';
 import { LoginGuard } from './authentication/login.guard';
 
 const routes: Routes = [
-  {path : 'about' , component : AboutComponent ,  },
-  {path : 'login' , component : LoginComponent  },
-  {path : 'articles' , component : ArticlesComponent ,  },
-  {path : 'article/:name' , component : ArticleComponent ,  },
-  {path : 'post-writting' , component : PostWrittingComponent , canActivate: [LoginGuard]},
-  {path : 'post-writting/:id' , component : PostWrittingComponent , canActivate: [LoginGuard]  },
-  {path : 'work' , component : WorkComponent ,  },
-  { path: '',
+  { path: 'about', component: AboutComponent, },
+  { path: 'login', component: LoginComponent },
+  { path: 'articles', component: ArticlesComponent, },
+  { path: 'article/:name', component: ArticleComponent, },
+  { path: 'post-writing', component: PostWrittingComponent, canActivate: [LoginGuard] },
+  { path: 'post-writing/:id', component: PostWrittingComponent, canActivate: [LoginGuard] },
+  { path: 'work', component: WorkComponent, },
+  {
+    path: '',
     redirectTo: '/about',
     pathMatch: 'full'
   },
+  { path: '**', redirectTo: '/about', pathMatch: 'full' }
 ];
 
 @NgModule({
