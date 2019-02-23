@@ -19,7 +19,9 @@ export class ArticleComponent implements OnInit {
 
 
   ngOnInit() {
-    const postHeader = this.route.snapshot.paramMap.get('name');
+    let postHeader: string = this.route.snapshot.paramMap.get('name');
+    // normalizing the header to be sent as its original content.
+    postHeader = postHeader.split('_').join(' ');
     this.post = this.articleService.getPost(postHeader).finally(() => {
       setTimeout(() => {
         this.highlightService.highlightAll();

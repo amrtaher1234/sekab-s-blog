@@ -24,7 +24,9 @@ export class ArticlesComponent implements OnInit {
   ngOnInit() {
   }
   goTo(article) {
-    this.router.navigate(['/article', article.header]);
+    // changing the format to be friendly in the browser url.
+    const header = article.header.split(' ').join('_');
+    this.router.navigate(['/article', header]);
 
   }
 
