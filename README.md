@@ -1,27 +1,13 @@
-# BloggingWebApp
+# Sekab's Blog
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
+hello everyone, this is my blogging website where I write articles about pretty
+much everything related to programming and other interesting stuff. <br>
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<br>
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+check it out here : [https://sekab-blog.firebaseapp.com/about](link) <br>
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+also, feel free to support by issuing bugs/fixes/features here or on my trello board here:
+[https://trello.com/b/o0n2Z8Hn/sekabs-blog](trello)
