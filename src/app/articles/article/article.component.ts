@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
 import { ArticleService, Post } from './article.service';
 import { HighlightService } from 'src/app/highlight.service';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { GlobalService } from 'src/app/global.service';
 
 @Component({
   selector: 'app-article',
@@ -13,49 +10,20 @@ import { GlobalService } from 'src/app/global.service';
 })
 export class ArticleComponent implements OnInit {
 
-  post: Post;
-  highlighted: boolean;
+  post: Promise<Post>;
   constructor(
-    private globals: GlobalService,
-    private angularfire: AngularFirestore,
     private highlightService: HighlightService,
     private route: ActivatedRoute, private articleService: ArticleService) {
-    this.highlighted = false;
-    this.post = null;
   }
 
-  // tslint:disable-next-line:use-life-cycle-interface
-  ngAfterViewChecked() {
-    if (!this.highlighted) {
-      this.highlightService.highlightAll();
-      this.highlighted = true;
-    }
-  }
+
 
   ngOnInit() {
-    this.globals.isLoading = true;
     const postHeader = this.route.snapshot.paramMap.get('name');
-    console.log(postHeader);
-    this.articleService.getPost(postHeader).then(snapshot => {
-      snapshot.forEach(snap => {
-        this.post = snap.data() as Post;
-        this.post.id = snap.id;
-        setTimeout(() => {
-          this.highlightService.highlightAll();
-        }, 0);
-      });
-    }).finally(() => this.globals.isLoading = false);
-  }
-
-  handleCode(code: string): string {
-    return 'str';
-  }
-  testPush() {
-    const multistr = 'var i =1; \n var j =0; \n for( i ; i>100; i++){\n j++';
-    this.angularfire.collection('Posts').add({ tt: multistr }).then(d => {
-      console.log(d);
-    }).catch(err => {
-      console.log(err);
+    this.post = this.articleService.getPost(postHeader).finally(() => {
+      setTimeout(() => {
+        this.highlightService.highlightAll();
+      }, 0);
     });
   }
 }

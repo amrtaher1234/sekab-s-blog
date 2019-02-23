@@ -11,24 +11,19 @@ import { GlobalService } from '../global.service';
 })
 export class ArticlesComponent implements OnInit {
 
-  articles: Post[];
+  articles: Observable<Post[]>;
   constructor(
     private globals: GlobalService,
     private router: Router,
     private articlesService: ArticleService) {
 
     this.globals.isLoading = true;
-    this.articlesService.fetchPosts().then(snap => {
-      this.articles = snap.docs.map(val => val.data() as Post);
-      console.log(this.articles);
-    }).finally(() => globals.isLoading = false );
-    // this.articles.subscribe(data => console.log(data) , err => console.log(err));
+    this.articles = this.articlesService.fetchPosts();
   }
 
   ngOnInit() {
   }
   goTo(article) {
-    console.log(article);
     this.router.navigate(['/article', article.header]);
 
   }
