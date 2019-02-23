@@ -1,5 +1,6 @@
+<section *ngIf="post | async as post" class="article">
 <app-vote-button *ngIf="post" [votes]='post.votes' [post_id]='post.id'></app-vote-button>
-<section *ngIf="post" class="article">
+
   <img  class="header-img" src="{{post.icon}}" 
   alt="">
     <div class="mat-display-2">
@@ -8,12 +9,10 @@
     </div>
 
 
-<div *ngIf="post.post" [innerHTML]="post.post">
+<div  [innerHTML]="post.post">
 
 </div>
-    <div class="voting-area">
-      
-    </div>
+
     <div class="comment-section">
 
     </div>
