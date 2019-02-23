@@ -27,7 +27,6 @@ declare var Prism: any;
 export class HighlightService {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    console.log();
   }
 
   highlightAll() {

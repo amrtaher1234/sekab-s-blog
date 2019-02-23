@@ -20,7 +20,6 @@ export class WorkComponent implements OnInit {
       data.forEach(d => {
         this.workArray.push(d.data() as Work);
       });
-      console.log(this.workArray);
     }, err => console.error(err) , () => this.globals.isLoading = false);
   }
 

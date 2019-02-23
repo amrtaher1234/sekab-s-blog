@@ -18,7 +18,6 @@ export class VoteButtonComponent implements OnInit {
     this.votes++;
     document.getElementById('container').classList.add('opacity-pump');
     this.animateCss('.vote-btn', 'jello', () => {
-      console.log('finished');
       document.getElementById('container').classList.remove('opacity-pump');
     });
     this.animateCss('.number', 'bounceIn', () => { });
@@ -26,7 +25,6 @@ export class VoteButtonComponent implements OnInit {
   }
   animateCss(element, animationName, callback) {
     const node = document.querySelector(element);
-    console.log(node);
     node.classList.add(element, animationName);
 
     function handleAnimationEnd() {
