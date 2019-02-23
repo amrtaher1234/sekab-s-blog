@@ -8,10 +8,12 @@ import {
 } from '@angular/material';
 import { NgModule } from '@angular/core';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 // tslint:disable-next-line:max-line-length
 const mods = [MatFormFieldModule, MatAutocompleteModule,
+    MatSnackBarModule,
     MatProgressBarModule,
     MatInputModule, MatSelectModule, MatRadioModule,
     MatButtonModule, MatToolbarModule, MatIconModule,

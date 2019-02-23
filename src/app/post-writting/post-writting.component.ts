@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Content, Post, ArticleService } from '../articles/article/article.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-post-writting',
@@ -13,7 +14,9 @@ export class PostWrittingComponent implements OnInit {
   toEdit = false;
   postDoc: string;
   contentArray: Content[];
-  constructor(private articleService: ArticleService, private route: ActivatedRoute , private router: Router) {
+  constructor(
+    private snack: MatSnackBar,
+    private articleService: ArticleService, private route: ActivatedRoute , private router: Router) {
     this.post = {} as Post;
     this.post.votes = 0;
     this.post.tag = ['s' , 's'];
@@ -46,9 +49,11 @@ export class PostWrittingComponent implements OnInit {
     this.post.content = this.contentArray;
     this.post.time = new Date().toString();
     if (this.post.header && this.post.icon && this.post.content && this.post.post) {
-      this.articleService.addPost(this.post).then(res => {
+      this.articleService.addPost(this.post).then(() => {
+          this.snack.open('Created your post!' , null , {duration: 2000});
           this.post = {} as Post;
           this.contentArray = [] as Content[];
+
       }).catch(err => {
         console.error(err);
       });
@@ -57,7 +62,9 @@ export class PostWrittingComponent implements OnInit {
     }
   } else {
     this.post.content = this.contentArray;
-    this.articleService.updatePost(this.post , this.postDoc).then(res => {
+    this.articleService.updatePost(this.post , this.postDoc).then(() => {
+      this.snack.open('updated your post!' , null , {duration: 2000});
+
     }).catch(err => {
       alert('error check console');
       console.error(err);
