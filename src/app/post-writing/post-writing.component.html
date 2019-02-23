@@ -48,5 +48,8 @@
              <!-- NEW MODIFICATIONS TO THE WAY WE WRITE POSTS..TODO: ON PROGRESS -->
 
 
-    <button (click)="createPost()" mat-raised-button color="accent">Add Post</button>
-
+    <button (click)="createPost()" mat-raised-button color="accent"
+     >Add Post</button>
+     <br><br>
+    <button *ngIf="toEdit" mat-raised-button color="primary" 
+    (click)="deletePost()">Delete Post</button>

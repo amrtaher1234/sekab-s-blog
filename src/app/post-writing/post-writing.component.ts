@@ -95,5 +95,11 @@ addTag(tag , options) {
     this.post.post += `\n` + `<div class="mat-display-1">  </div>`;
   }
 }
+deletePost() {
+  this.articleService.deletePost(this.postDoc).then(() => {
+    this.snack.open('post deleted successfully');
+    this.router.navigate(['post-writing']);
+  });
+}
 
 }

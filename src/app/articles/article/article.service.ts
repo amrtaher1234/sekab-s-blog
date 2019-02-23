@@ -68,4 +68,8 @@ export class ArticleService {
      return this.globalService.loaderPromises
      (this.db.firestore.collection('Posts').doc(id).update({votes : value}));
    }
+   public deletePost(id: string) {
+    return this.globalService.loaderPromises
+    (this.db.firestore.collection('Posts').doc(id).delete());
+   }
 }
