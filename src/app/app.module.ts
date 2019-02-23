@@ -16,7 +16,6 @@ import { AngularFireModule } from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireAuthModule, AngularFireAuth} from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
-import { PostWrittingComponent } from './post-writting/post-writting.component';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
 import { WorkComponent } from './work/work.component';
@@ -24,6 +23,7 @@ import { VoteButtonComponent } from './components/vote-button/vote-button.compon
 import { CommentSectionComponent } from './component/comment-section/comment-section.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { CommonModule } from '@angular/common';
+import { PostWritingComponent } from './post-writing/post-writing.component';
 
 
 @NgModule({
@@ -34,7 +34,7 @@ import { CommonModule } from '@angular/common';
     GalleryComponent,
     ArticlesComponent,
     ArticleComponent,
-    PostWrittingComponent,
+    PostWritingComponent,
     CardComponent,
     WorkComponent,
     VoteButtonComponent,

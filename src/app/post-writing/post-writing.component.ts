@@ -4,11 +4,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 
 @Component({
-  selector: 'app-post-writting',
-  templateUrl: './post-writting.component.html',
-  styleUrls: ['./post-writting.component.scss']
+  selector: 'app-post-writing',
+  templateUrl: './post-writing.component.html',
+  styleUrls: ['./post-writing.component.scss']
 })
-export class PostWrittingComponent implements OnInit {
+export class PostWritingComponent implements OnInit {
 
   post: Post;
   toEdit = false;
