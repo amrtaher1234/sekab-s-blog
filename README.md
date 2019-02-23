@@ -7,7 +7,7 @@ much everything related to programming and other interesting stuff. <br>
 <br>
 
 
-check it out here : [website](https://sekab-blog.firebaseapp.com/about) <br>
+check it out here : [Website](https://sekab-blog.firebaseapp.com/about) <br>
 
 also, feel free to support by issuing bugs/fixes/features here or on my trello board here:
-(https://trello.com/b/o0n2Z8Hn/sekabs-blog)[trello]
+[Trello](https://trello.com/b/o0n2Z8Hn/sekabs-blog)
