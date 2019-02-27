@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { map, tap, finalize } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { GlobalService } from 'src/app/global.service';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 export interface Post {
   header: string ;
@@ -31,7 +32,8 @@ export class ArticleService {
   currentPost: Observable<Post>;
   constructor(private http: HttpClient,
     private globalService: GlobalService,
-    private db: AngularFirestore) {
+    private db: AngularFirestore,
+    private storage: AngularFireStorage) {
 
    }
    public fetchPosts(): Observable<Post[]> {
@@ -71,5 +73,8 @@ export class ArticleService {
    public deletePost(id: string) {
     return this.globalService.loaderPromises
     (this.db.firestore.collection('Posts').doc(id).delete());
+   }
+   public addPhoto(photo: any) {
+    this.storage.upload('sad' , photo);
    }
 }

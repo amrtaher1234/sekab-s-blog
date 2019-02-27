@@ -14,7 +14,8 @@ import { ArticleComponent } from './articles/article/article.component';
 
 import { AngularFireModule } from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
-import {AngularFireAuthModule, AngularFireAuth} from '@angular/fire/auth';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFireStorageModule} from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
@@ -54,6 +55,7 @@ import { PostWritingComponent } from './post-writing/post-writing.component';
     AngularFireModule.initializeApp(environment.config),
     AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
+    AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
