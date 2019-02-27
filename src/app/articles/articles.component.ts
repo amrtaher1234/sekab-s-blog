@@ -13,11 +13,9 @@ export class ArticlesComponent implements OnInit {
 
   articles: Observable<Post[]>;
   constructor(
-    private globals: GlobalService,
     private router: Router,
     private articlesService: ArticleService) {
 
-    this.globals.isLoading = true;
     this.articles = this.articlesService.fetchPosts();
   }
 

@@ -9,7 +9,8 @@ export class GlobalService {
   public isLoading = false;
   constructor() { }
   public loaderSubscription(sub: Observable<any>): Observable<any> {
-    return sub.pipe(tap(() => this.isLoading = true),
+    this.isLoading  = true;
+    return sub.pipe(
     finalize(() => this.isLoading = false));
    }
    public loaderPromises(prom: Promise<any>): Promise<any> {
