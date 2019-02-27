@@ -1,0 +1,28 @@
+<section class="article">
+  <div class="mat-display-2">
+    Articles
+  </div>
+  
+  <mat-toolbar class="post" *ngFor="let article of articles | async" >
+
+      <mat-toolbar-row>
+       <span class="post-icon"> <img src="{{article.icon}}" alt=""></span>
+       <span [innerHTML]="article.header" class="post-name"></span>
+
+
+       <span class="-spacer"></span>
+       <mat-menu #appMenu="matMenu">
+        <button (click)="delete(article)" mat-menu-item>Delete</button>
+        <button (click)="edit(article)" mat-menu-item>Edit</button>
+      </mat-menu>
+      
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+       <span [innerHTML]="article.time | date" class="post-date"></span>
+      </mat-toolbar-row>
+
+  </mat-toolbar>
+  </section>
+
+  

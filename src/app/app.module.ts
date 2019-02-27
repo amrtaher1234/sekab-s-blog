@@ -24,7 +24,6 @@ import { VoteButtonComponent } from './components/vote-button/vote-button.compon
 import { CommentSectionComponent } from './component/comment-section/comment-section.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { CommonModule } from '@angular/common';
-import { PostWritingComponent } from './post-writing/post-writing.component';
 
 
 @NgModule({
@@ -35,7 +34,6 @@ import { PostWritingComponent } from './post-writing/post-writing.component';
     GalleryComponent,
     ArticlesComponent,
     ArticleComponent,
-    PostWritingComponent,
     CardComponent,
     WorkComponent,
     VoteButtonComponent,

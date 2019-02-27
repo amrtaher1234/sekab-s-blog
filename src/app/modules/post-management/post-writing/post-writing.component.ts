@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Content, Post, ArticleService } from '../articles/article/article.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
+import { Content, Post, ArticleService } from 'src/app/articles/article/article.service';
 
 @Component({
   selector: 'app-post-writing',
