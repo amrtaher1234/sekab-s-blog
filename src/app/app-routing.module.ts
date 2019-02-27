@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'articles', component: ArticlesComponent, },
   { path: 'article/:name', component: ArticleComponent, },
   {
-    path: 'post-writing',
+    path: 'post-management',
     loadChildren : './modules/post-management/post-management.module#PostManagementModule',
     canActivate : [LoginGuard]
   },
