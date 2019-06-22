@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { GlobalService } from 'src/app/global.service';
-import { Post } from 'src/app/articles/article/article.service';
+import { GlobalService } from 'src/app/@core/services/global.service';
+import { Post } from 'src/app/@core/services/article.service';
 
 @Injectable({
     providedIn: 'root'

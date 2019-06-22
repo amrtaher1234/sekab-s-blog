@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
-import { ArticlesComponent } from './articles/articles.component';
-import { ArticleComponent } from './articles/article/article.component';
-import { WorkComponent } from './work/work.component';
-import { LoginComponent } from './authentication/login/login.component';
-import { LoginGuard } from './authentication/login.guard';
+import { AboutComponent } from './components/about/about.component';
+import { ArticlesComponent } from './components/articles/articles.component';
+import { ArticleComponent } from './components/article/article.component';
+import { WorkComponent } from './components/work/work.component';
+import { LoginComponent } from './components/login/login.component';
+import { LoginGuard } from './@core/guards/login.guard';
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent, },
@@ -15,8 +15,8 @@ const routes: Routes = [
   { path: 'article/:name', component: ArticleComponent, },
   {
     path: 'post-management',
-    loadChildren : './modules/post-management/post-management.module#PostManagementModule',
-    canActivate : [LoginGuard]
+    loadChildren: './modules/post-management/post-management.module#PostManagementModule',
+    canActivate: [LoginGuard]
   },
 
   { path: 'work', component: WorkComponent, },
