@@ -4,11 +4,11 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from 'src/app/shared/material.module';
 import { Routes, RouterModule } from '@angular/router';
 import { PostWritingComponent } from './components/post-writing/post-writing.component';
 import { FormsModule } from '@angular/forms';
 import { SettingsComponent } from './components/settings/settings.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const routes: Routes = [
   { path: 'settings', component: SettingsComponent },
@@ -27,7 +27,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     CommonModule,
     FormsModule,
-    MaterialModule,
+    SharedModule,
     HttpClientModule,
   ],
   providers: [],

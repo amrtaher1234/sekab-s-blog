@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './shared/material.module';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { AboutComponent } from './components/about/about.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
@@ -24,6 +23,7 @@ import { VoteButtonComponent } from './shared/components/vote-button/vote-button
 import { CommentSectionComponent } from './shared/components/comment-section/comment-section.component';
 import { LoginComponent } from './components/login/login.component';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -47,8 +47,7 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     FormsModule,
     //
-    MaterialModule,
-
+    SharedModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.config),
     AngularFirestoreModule.enablePersistence(),
