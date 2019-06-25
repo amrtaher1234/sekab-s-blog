@@ -4,3 +4,31 @@
   border: none;
   outline: none;
 }
+
+.flying-wrapper {
+  .material-icons {
+    font-size: 18px !important;
+  }
+
+  position: relative;
+
+  button {
+    margin-right: 10px;
+  }
+
+  &__btn {}
+
+  &__btn:focus+&__fabs {
+    transition: all 0.4s linear;
+    opacity: 1;
+  }
+
+  &__fabs {
+    position: absolute;
+    opacity: 0;
+    left: 7%;
+    top: 0;
+  }
+
+  &__fabs button {}
+}
