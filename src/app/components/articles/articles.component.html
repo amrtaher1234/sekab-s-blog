@@ -1,23 +1,21 @@
 <section class="article">
-    <div class="mat-display-2">
-      Articles
-    </div>
-    
-    <a >
-    <mat-toolbar class="post" *ngFor="let article of articles | async" >
+  <div class="mat-display-2">
+    Articles
+  </div>
 
-        <mat-toolbar-row (click)="goTo(article)">
-         <span class="post-icon"> <img src="{{article.icon}}" alt=""></span>
-         <span [innerHTML]="article.header" class="post-name"></span>
+  <a>
+    <mat-toolbar class="post" *ngFor="let article of articles | async">
+
+      <mat-toolbar-row (click)="goTo(article)">
+        <span class="post-icon"> <img src="{{article.icon}}" alt=""></span>
+        <span [innerHTML]="article.header" class="post-name"></span>
 
 
-         <span class="-spacer"></span>
+        <span class="-spacer"></span>
 
-         <span [innerHTML]="article.time | date:'shortDate'" class="post-date"></span>
-        </mat-toolbar-row>
+        <span [innerHTML]="article.time | date:'shortDate'" class="post-date"></span>
+      </mat-toolbar-row>
 
     </mat-toolbar>
   </a>
-    </section>
-
-    
+</section>

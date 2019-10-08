@@ -1,16 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-navigation-bar></app-navigation-bar>
 
-<main>
-    
-<router-outlet></router-outlet>
+<main (@routeAnimations.start)="showFooterF(false)" [@routeAnimations]="o.isActivated ? o.activatedRoute : ''">
+  <router-outlet #o="outlet"></router-outlet>
 </main>
 
 
 
 
 
-<footer>
-    
-   <div> Made by <span> Amr Taher </span> <mat-icon color="primary">games</mat-icon></div>
+<footer *ngIf="showFooter" (@routeAnimations.done)="showFooterF(true)">
+  <div> Made by <span> Amr Taher </span>
+    <mat-icon color="primary">games</mat-icon>
+  </div>
 </footer>

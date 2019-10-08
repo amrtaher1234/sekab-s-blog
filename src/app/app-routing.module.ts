@@ -9,21 +9,20 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginGuard } from './@core/guards/login.guard';
 
 const routes: Routes = [
-  { path: 'about', component: AboutComponent, },
-  { path: 'login', component: LoginComponent },
-  { path: 'articles', component: ArticlesComponent, },
-  { path: 'article/:name', component: ArticleComponent, },
-  {
-    path: 'post-management',
-    loadChildren: './modules/post-management/post-management.module#PostManagementModule',
-    canActivate: [LoginGuard]
-  },
-
-  { path: 'work', component: WorkComponent, },
   {
     path: '',
     redirectTo: '/about',
     pathMatch: 'full'
+  },
+  { path: 'about', component: AboutComponent, data: { state: 'about' } },
+  { path: 'login', component: LoginComponent },
+  { path: 'articles', component: ArticlesComponent, data: { state: 'articles' } },
+  { path: 'article/:name', component: ArticleComponent, data: { state: 'article' } },
+  { path: 'work', component: WorkComponent, data: { state: 'work' } },
+  {
+    path: 'post-management',
+    loadChildren: './modules/post-management/post-management.module#PostManagementModule',
+    canActivate: [LoginGuard]
   },
   { path: '**', redirectTo: '/about', pathMatch: 'full' }
 ];

@@ -1,46 +1,55 @@
-mat-toolbar{
-    box-shadow: 1px 1px 10px 0px rgba(120, 111, 111, 0.5);
-    // background :  #00ffe9  
-    position: fixed;
-    z-index: 999;
-    top:0;
-    width: 100%;
+mat-toolbar {
+  box-shadow: 1px 1px 10px 0px rgba(120, 111, 111, 0.5);
+  // background :  #00ffe9  
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
 }
 
-button:not(.name){
-    font-weight: 100; 
+button:not(.name) {
+  font-weight: 100;
 }
-button{
-    font-size: 19px ; 
-    margin-right: 18px; 
-    color: #827c7c;
+
+button {
+  font-size: 19px;
+  margin-right: 18px;
+  color: #827c7c;
 }
 
 
-  mat-toolbar-row{
-      justify-content: center;
+mat-toolbar-row {
+  justify-content: center;
+}
+
+button.name {
+  font-family: Charmonman;
+  font-weight: 800;
+  font-size: 23px;
+}
+
+img {
+  vertical-align: middle;
+}
+
+mat-menu {
+
+  a,
+  button {
+    display: block;
   }
-button.name{
-    font-family: Charmonman;
-    font-weight: 800;
-    font-size: 23px;
 }
-img{
-    vertical-align: middle;
+
+.menu-btn {
+  display: none;
 }
-mat-menu{
-    a , button{
-        display: block;
-    }
-}
-.menu-btn{
-    display: none; 
-}
+
 @media only screen and (max-width: 600px) {
-    .menu-btn{
-        display: inherit; 
-    }
-    #toolbar-item{
-        display: none;
-    }
+  .menu-btn {
+    display: inherit;
+  }
+
+  #toolbar-item {
+    display: none;
+  }
 }

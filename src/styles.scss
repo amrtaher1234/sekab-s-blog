@@ -1,63 +1,109 @@
-/* You can add global styles to this file, and also import other style files */
+// /* You can add global styles to this file, and also import other style files */
+// @import '~@angular/material/theming';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// // Plus imports for other components in your app.
 
-main{
-    padding-top: 9%;
-    width: 62%; 
-    margin: auto; 
+// // Include the common styles for Angular Material. We include this here so that you only
+// // have to load a single css file for Angular Material in your app.
+// // Be sure that you only ever include this mixin once!
+// @include mat-core();
+
+// // Define the palettes for your theme using the Material Design palettes available in palette.scss
+// // (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// // hue. Available color palettes: https://material.io/design/color/
+// $candy-app-primary: mat-palette($mat-indigo);
+// $candy-app-accent: mat-palette($mat-pink, A200, A100, A400);
+// $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent);
+
+// // Include the theme styles for only specified components.
+// @include angular-material-theme($candy-app-theme);
+// $primary: map-get($candy-app-theme, primary);
+// $accent: map-get($theme, accent);
+// $warn: map-get($theme, warn);
+
+// // Create theme specfic styles
+// .primaryColorBG {
+//   background-color: mat-color($primary);
+// }
+
+// p,
+// h1,
+// h2 {
+//   // color: mat-color(map-get($theme, primary));
+// }
+
+html,
+body {
+  height: 100%;
 }
 
-p{
-    font: normal normal normal 19.6px  -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
-    line-height: 1.35em;
-    color: #404040;
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+main {
+  position: relative;
+  padding-top: 9%;
+  width: 62%;
+  margin: auto;
+}
+
+p {
+  font: normal normal normal 19.6px -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+  line-height: 1.35em;
+  color: #404040;
 }
 
 *::selection {
-    background: #fff2a8;
+  background: #fff2a8;
 }
 
 .-spacer {
-    flex-grow: 1; 
-  }
+  flex-grow: 1;
+}
 
-  a{
-      color:unset; 
-  }
-  
+a {
+  color: unset;
+}
+
 @import "../node_modules/prismjs/themes/prism-solarizedlight.css";
 @import "../node_modules/prismjs/plugins/toolbar/prism-toolbar.css";
 @import "animate.scss";
 
 //   @import './harmonic-theme.scss'; 
-  
-  .icon-img-32{
-      width: 32px; 
-      height: 32px; 
-  }
 
-  // 
-  @media only screen and (max-width: 600px) {
-    main{
-        padding-top: 21.9%;
-        width: 85%;
-        div.gray-section p ,  p{
-            font-size: 16.6px; 
-        }
-        .mat-display-2, .mat-typography .mat-display-2{
-            font-size: 39px;
-            margin: 0 0 43px; 
-        }
+.icon-img-32 {
+  width: 32px;
+  height: 32px;
+}
+
+// 
+@media only screen and (max-width: 600px) {
+  main {
+    padding-top: 21.9%;
+    width: 85%;
+
+    div.gray-section p,
+    p {
+      font-size: 16.6px;
+    }
+
+    .mat-display-2,
+    .mat-typography .mat-display-2 {
+      font-size: 39px;
+      margin: 0 0 43px;
     }
   }
-  mat-spinner{
-      position: absolute !important;
-      top:50%;
-      left:50%;
-      transform: translate(-50%, -50%); 
-  }
-  img {
-      max-width: 100%;
-  }
+}
+
+mat-spinner {
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+img {
+  max-width: 100%;
+}

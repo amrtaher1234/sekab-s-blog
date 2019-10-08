@@ -46,7 +46,6 @@ import { SharedModule } from './shared/shared.module';
     CommonModule,
     BrowserAnimationsModule,
     FormsModule,
-    //
     SharedModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.config),
