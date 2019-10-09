@@ -1,0 +1,8 @@
+$light-app-primary: mat-palette($mat-gray, 300);
+$light-app-accent: mat-palette($mat-gray, 300);
+$light-app-theme: mat-light-theme($light-app-primary, $light-app-accent);
+$light-app-background: mat-palette($mat-gray, 50);
+$custom-colors: (background-color: mat-color($mat-gray, 50),
+  text-color: mat-color($mat-gray, 800),
+);
+$light-app-theme: map-merge($light-app-theme, (custom-colors: $custom-colors));

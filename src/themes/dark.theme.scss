@@ -1,0 +1,8 @@
+$dark-app-primary: mat-palette($mat-pink, 500);
+$dark-app-accent: mat-palette($mat-gray, 600);
+$dark-app-theme: mat-dark-theme($dark-app-primary, $dark-app-accent);
+$dark-app-background: mat-palette($mat-gray, 700);
+$custom-colors: (background-color: mat-color($mat-gray, 800),
+  text-color: mat-color($mat-gray, 50),
+);
+$dark-app-theme: map-merge($dark-app-theme, (custom-colors: $custom-colors));

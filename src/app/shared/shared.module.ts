@@ -10,12 +10,14 @@ import { NgModule } from '@angular/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { WritingBlockComponent } from './components/writing-block/writing-block.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
 // tslint:disable-next-line:max-line-length
 const mods = [MatFormFieldModule, MatAutocompleteModule,
     MatSnackBarModule,
     MatProgressBarModule,
+    MatSlideToggleModule,
     MatInputModule, MatSelectModule, MatRadioModule,
     MatButtonModule, MatToolbarModule, MatIconModule,
     MatDividerModule, MatMenuModule, MatProgressSpinnerModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalService } from '../../@core/services/global.service';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { ThemingService } from 'src/app/shared/services/theming.service';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -10,6 +11,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class NavigationBarComponent implements OnInit {
   isAuthorized = false;
   constructor(
+    private theming: ThemingService,
     private auth: AngularFireAuth,
     public globals: GlobalService) { }
 
@@ -19,6 +21,13 @@ export class NavigationBarComponent implements OnInit {
         this.isAuthorized = true;
       }
     });
+  }
+  toggleTheme(res) {
+    if (res.checked) {
+      this.theming.currentTheme.next('dark-theme');
+    } else {
+      this.theming.currentTheme.next('light-theme');
+    }
   }
 
 }

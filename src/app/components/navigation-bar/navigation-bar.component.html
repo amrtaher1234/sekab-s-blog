@@ -1,4 +1,4 @@
-<mat-toolbar color="foreground">
+<mat-toolbar color="primary">
   <mat-progress-bar *ngIf="globals.isLoading" mode="indeterminate"></mat-progress-bar>
 
   <mat-progress-bar *ngIf="!globals.isLoading" mode="determinate" value="0"></mat-progress-bar>
@@ -41,6 +41,7 @@
     <a id="toolbar-item" routerLink='/articles'><button mat-button>Articles</button></a>
     <a id="toolbar-item" routerLink='/work'><button mat-button>My work</button></a>
     <a id="toolbar-item" *ngIf="isAuthorized" routerLink='/post-management'><button mat-button>Settings</button></a>
+    <mat-slide-toggle (change)="toggleTheme($event)" color="accent"></mat-slide-toggle>
     <!-- <a routerLink=''><button  mat-button>Support</button></a> -->
     <span id="toolbar-item" class="-spacer"></span>
 

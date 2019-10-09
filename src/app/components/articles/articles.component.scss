@@ -1,44 +1,45 @@
-
-
 mat-toolbar.post {
   background: transparent;
-  border-bottom: 2px solid #f2f2f2;
-  span.post-name{
-    color: #636060 !important;
-    font: normal normal normal 20.1px -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+
+  span.post-name {
+    font: normal normal normal 20.1px -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
   }
-  span.post-icon{
-      margin-right: 30px; 
-      img{
-          width: 40px; 
-          height: 40px;
-          vertical-align: center;
-      }
+
+  span.post-icon {
+    margin-right: 30px;
+
+    img {
+      width: 40px;
+      height: 40px;
+      vertical-align: center;
+    }
   }
-  span.post-date{
-    font: normal normal normal 17.2px -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+
+  span.post-date {
+    font: normal normal normal 17.2px -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
 
   }
-  transition: 0.21s all linear ;
-}
-a{
-    text-decoration: none; 
-    color: #636060 !important;
+
+  transition: 0.21s all linear;
 }
 
-mat-toolbar:hover{
-    background: #f2f2f2; 
-    cursor: pointer;
+a {
+  text-decoration: none;
+  color: #636060 !important;
 }
+
+
 @media only screen and (max-width: 600px) {
-    .post-name{
-        font-size: 12px !important;
-    }
-    .post-icon{
-        margin-right: 5px !important;
-    }
-    .post-date{
-        font-size: 12px !important;
-        font-style: italic !important;
-    }
+  .post-name {
+    font-size: 12px !important;
+  }
+
+  .post-icon {
+    margin-right: 5px !important;
+  }
+
+  .post-date {
+    font-size: 12px !important;
+    font-style: italic !important;
+  }
 }

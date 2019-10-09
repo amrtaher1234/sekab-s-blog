@@ -1,16 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-navigation-bar></app-navigation-bar>
+<div class="{{theming.currentTheme | async }}">
+  <app-navigation-bar></app-navigation-bar>
 
-<main (@routeAnimations.start)="showFooterF(false)" [@routeAnimations]="o.isActivated ? o.activatedRoute : ''">
-  <router-outlet #o="outlet"></router-outlet>
-</main>
-
-
-
+  <main (@routeAnimations.start)="showFooterF(false)" [@routeAnimations]="o.isActivated ? o.activatedRoute : ''">
+    <router-outlet #o="outlet"></router-outlet>
+  </main>
 
 
-<footer *ngIf="showFooter" (@routeAnimations.done)="showFooterF(true)">
-  <div> Made by <span> Amr Taher </span>
-    <mat-icon color="primary">games</mat-icon>
-  </div>
-</footer>
+
+
+
+  <footer *ngIf="showFooter" (@routeAnimations.done)="showFooterF(true)">
+    <div> <span> Made by</span> <span class="amr"> Amr Taher </span>
+      <mat-icon color="primary">games</mat-icon>
+    </div>
+  </footer>
+</div>

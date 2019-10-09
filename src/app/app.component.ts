@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { slideInAnimation } from './@core/animation';
 import { RouterOutlet } from '@angular/router';
+import { ThemingService } from './shared/services/theming.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +12,8 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   showFooter: boolean;
-  constructor() {
+  currentTheme = 'light-theme';
+  constructor(private theming: ThemingService) {
     this.showFooter = true;
   }
   prepareRoute(outlet: RouterOutlet) {
