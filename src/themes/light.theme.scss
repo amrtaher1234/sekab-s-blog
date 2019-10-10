@@ -1,5 +1,5 @@
-$light-app-primary: mat-palette($mat-gray, 300);
-$light-app-accent: mat-palette($mat-gray, 300);
+$light-app-primary: mat-palette($mat-gray, 200);
+$light-app-accent: mat-palette($mat-gray, 200);
 $light-app-theme: mat-light-theme($light-app-primary, $light-app-accent);
 $light-app-background: mat-palette($mat-gray, 50);
 $custom-colors: (background-color: mat-color($mat-gray, 50),

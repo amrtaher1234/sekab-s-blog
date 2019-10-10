@@ -22,12 +22,12 @@ export class NavigationBarComponent implements OnInit {
       }
     });
   }
-  toggleTheme(res) {
-    if (res.checked) {
+  changeTheme() {
+    const currentTheme = this.theming.currentTheme.getValue();
+    currentTheme === 'dark-theme' ? this.theming.currentTheme.next('light-theme') :
       this.theming.currentTheme.next('dark-theme');
-    } else {
-      this.theming.currentTheme.next('light-theme');
-    }
+
+    localStorage.setItem('currentTheme', this.theming.currentTheme.getValue());
   }
 
 }

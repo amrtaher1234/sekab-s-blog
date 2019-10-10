@@ -3,13 +3,19 @@
 
 @include mat-core();
 
-* {
-  transition: 0.4s all linear;
-}
+// * {
+//   transition: 0.4s all linear;
+// }
 
 @mixin pick-theme($theme) {
   $primary: map-get($theme, primary);
   $custom-colors: map-get($theme, custom-colors);
+
+  .cards-container {
+    .card {
+      background-color: mat-color($primary);
+    }
+  }
 
   h1,
   p,
@@ -30,7 +36,6 @@
       cursor: pointer;
     }
   }
-
 }
 
 @import "./themes/dark.theme.scss";

@@ -18,10 +18,11 @@
       <mat-icon class="mat-18">menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <a mat-menu-item routerLink='/about'><button mat-button>About me</button></a>
-      <a mat-menu-item routerLink='/articles'><button mat-button>Articles</button></a>
-      <a mat-menu-item routerLink='/work'><button mat-button>My work</button></a>
-      <a *ngIf="isAuthorized" mat-menu-item routerLink='/post-management'><button mat-button>Settings</button></a>
+      <a mat-menu-item routerLink='/about'><button [disableRipple]="true" mat-button>About me</button></a>
+      <a mat-menu-item routerLink='/articles'><button [disableRipple]="true" mat-button>Articles</button></a>
+      <a mat-menu-item routerLink='/work'><button [disableRipple]="true" mat-button>My work</button></a>
+      <a *ngIf="isAuthorized" mat-menu-item routerLink='/post-management'><button [disableRipple]="true"
+          mat-button>Settings</button></a>
 
       <!-- <a routerLink=''><button  mat-button>Support</button></a> -->
       <span class="-spacer"></span>
@@ -41,7 +42,9 @@
     <a id="toolbar-item" routerLink='/articles'><button mat-button>Articles</button></a>
     <a id="toolbar-item" routerLink='/work'><button mat-button>My work</button></a>
     <a id="toolbar-item" *ngIf="isAuthorized" routerLink='/post-management'><button mat-button>Settings</button></a>
-    <mat-slide-toggle (change)="toggleTheme($event)" color="accent"></mat-slide-toggle>
+    <button (click)=changeTheme() mat-icon-button>
+      <mat-icon color="text-color">format_color_fill</mat-icon>
+    </button>
     <!-- <a routerLink=''><button  mat-button>Support</button></a> -->
     <span id="toolbar-item" class="-spacer"></span>
 

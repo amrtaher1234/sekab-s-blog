@@ -1,5 +1,17 @@
-
-<p>Some of my work are here displayed. Note that these projects are just the ones I made personally and not the ones I made during my freelancing or full time jobs:)</p>
-<div *ngIf="workArray">
-<app-card [data]="workArray"></app-card>
+<p>Some of my work are here displayed. Note that these projects are just the ones I made personally and not the ones I
+  made during my freelancing or full time jobs:)</p>
+<div @pageAnimations class="cards-container" *ngIf="workArray">
+  <div (click)="goTo(work)" class="card" *ngFor="let work of workArray; let i = index;">
+    <div class="card__image">
+      <img [src]="work.image" alt="">
+    </div>
+    <div class="card__body">
+      <h1 class="card__header">
+        {{work.header}}
+      </h1>
+      <p class="card__content">
+        {{work.text}}
+      </p>
+    </div>
+  </div>
 </div>
