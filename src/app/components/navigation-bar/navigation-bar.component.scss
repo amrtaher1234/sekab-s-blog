@@ -8,7 +8,7 @@ mat-toolbar {
 }
 
 button:not(.name) {
-  font-weight: 100;
+  font-weight: 400;
 }
 
 button {
@@ -36,6 +36,7 @@ mat-menu {
   a,
   button {
     display: block;
+    font-weight: 500;
   }
 }
 

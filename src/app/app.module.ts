@@ -17,7 +17,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
-import { CardComponent } from './shared/components/card/card.component';
 import { WorkComponent } from './components/work/work.component';
 import { VoteButtonComponent } from './shared/components/vote-button/vote-button.component';
 import { CommentSectionComponent } from './shared/components/comment-section/comment-section.component';
@@ -34,7 +33,6 @@ import { SharedModule } from './shared/shared.module';
     GalleryComponent,
     ArticlesComponent,
     ArticleComponent,
-    CardComponent,
     WorkComponent,
     VoteButtonComponent,
     CommentSectionComponent,
